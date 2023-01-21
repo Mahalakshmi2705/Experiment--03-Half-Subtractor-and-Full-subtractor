@@ -52,23 +52,37 @@ RegisterNumber: 22008601
 HALF SUBTRACTOR:
 
 module HalfSubtractor(A,B,Diff,Borrow);
+
 input A,B;
+
 output Diff,Borrow;
+
 wire x;
+
 xor (Diff, A,B);
+
 not(x,A);
+
 and(Borrow,x,B);
+
 endmodule
 
 FULL SUBTRACTOR:
 
 module FullSubtractor(A,B,C,Diff,Borrow);
+
 input A,B,C;
+
 output Diff,Borrow;
+
 wire p;
+
 assign Diff = ((A^B)^C);
+
 not(p,A);
+
 assign Borrow = ((p&B)|(p&C)|(B&C));
+
 endmodule
 
 
@@ -114,4 +128,5 @@ Timing diagram:
 ![Screenshot (16)](https://user-images.githubusercontent.com/122199968/212882876-7945b928-d45d-4308-8cf3-7ade90626b91.png)
 
 Result:
+
 Thus the half subtractor and full subtractor circuits are designed and the truth tables is verified using quartus software.
