@@ -5,9 +5,10 @@ Implementation-of-Half-subtractor-and-Full-subtractor-circuit
 AIM:
 
 To design a half subtractor and full subtractor circuit and verify its truth table in Quartus using Verilog programming.
+
 Equipments Required:
 
- Hardware – PCs, Cyclone II , USB flasher Software – Quartus prime
+Hardware – PCs, Cyclone II , USB flasher Software – Quartus prime
  
 Theory:
 
@@ -42,48 +43,32 @@ Procedure:
 
 Program:
 
-Program to design a half subtractor and full subtractor circuit and verify its truth table in quartus using Verilog programming.
-
-Developed by: MAHALAKSHMI S
-
-RegisterNumber: 22008601 
+    Program to design a half subtractor and full subtractor circuit and verify its truth table in quartus using Verilog programming.
+    Developed by: MAHALAKSHMI S
+    RegisterNumber: 22008601 
 
 
 HALF SUBTRACTOR:
 
-module HalfSubtractor(A,B,Diff,Borrow);
-
-input A,B;
-
-output Diff,Borrow;
-
-wire x;
-
-xor (Diff, A,B);
-
-not(x,A);
-
-and(Borrow,x,B);
-
-endmodule
+    module HalfSubtractor(A,B,Diff,Borrow);
+    input A,B;
+    output Diff,Borrow;
+    wire x;
+    xor (Diff, A,B);
+    not(x,A);
+    and(Borrow,x,B);
+    endmodule
 
 FULL SUBTRACTOR:
 
-module FullSubtractor(A,B,C,Diff,Borrow);
-
-input A,B,C;
-
-output Diff,Borrow;
-
-wire p;
-
-assign Diff = ((A^B)^C);
-
-not(p,A);
-
-assign Borrow = ((p&B)|(p&C)|(B&C));
-
-endmodule
+    module FullSubtractor(A,B,C,Diff,Borrow);
+    input A,B,C;
+    output Diff,Borrow;
+    wire p;
+    assign Diff = ((A^B)^C);
+    not(p,A);
+    assign Borrow = ((p&B)|(p&C)|(B&C));
+    endmodule
 
 
 Output:
@@ -98,14 +83,11 @@ Truthtable:
 
 ![Screenshot (41)](https://user-images.githubusercontent.com/122199968/212879600-002737cf-0a82-473f-b6ec-56d0ab059b40.png)
 
-
  RTL realization:
- 
- 
+
  ![Screenshot (13)](https://user-images.githubusercontent.com/122199968/212879859-b64d2705-0585-4719-82d1-129491d9c236.png)
 
 Timing diagram:
-
 
 ![Screenshot (14)](https://user-images.githubusercontent.com/122199968/212880018-74d4e40d-7e63-427f-8500-60cd290cf934.png)
 
